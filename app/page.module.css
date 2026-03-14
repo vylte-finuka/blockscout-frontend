@@ -1,0 +1,544 @@
+/* page.module.css */
+.main {
+    display: flex;
+    color: #ffffff;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* Correction de align-items */
+    padding: 6rem;
+    min-height: 200px;
+    flex: 1;
+  }
+  
+  @font-face {
+    font-family: BR Sonoma Semibold;
+    src: url('../public/BRSonomaSemibold.otf');
+    font-weight: 15;
+  }
+  
+  .bodyonwhitemessage {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+    font-size: 12px;
+  }
+  
+  .authorphoto {
+    margin-left:6px;
+  }
+  
+  .author {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+    font-size: 13px;
+  }
+  
+  .headeronwhite {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+  }
+  
+  .headeronwhiteX2 {
+    font-family: BR Sonoma Semibold;
+    font-size: 56px;
+    color: #000000;
+  }
+  
+  .bodyonwhite {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+    font-size: 18px;
+  }
+  
+  .bodymessage {
+    font-family: BR Sonoma Semibold;
+    color: #ffffff;
+    font-size: 12px;
+  }
+  
+  .header {
+    font-family: BR Sonoma Semibold;
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .headerX2 {
+    font-family: BR Sonoma Semibold;
+    font-size: 56px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .body {
+    font-family: BR Sonoma Semibold;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .bodycar {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+    font-size: 18px;
+    margin-top: -76px ! important;
+  }
+  
+  .bodyattract {
+    top: 14px;
+  }
+  
+  /* Containers */
+  .container {
+    display: flex;
+    background-color: #e0dbdd;
+    flex-direction: column;
+    align-items: flex-start !important; /* Aligne tout le contenu à gauche */
+    width: 100% !important; /* Assure que le conteneur occupe toute la largeur */
+  }
+  
+  .container2 {
+    background-color: #DBDFE0;
+    background-size: auto;
+    background-position: center;
+    min-height: 100vh;
+  }
+  
+  /* Grille */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ajusté pour flexibilité */
+    width: 100%;
+  }
+  
+  .card {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    transition: background 200ms, border 200ms;
+  }
+  
+  .ActionE {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.5; /* Ajoute de l'espace entre les lignes */
+    text-align: left; /* Aligne le texte à gauche */
+    word-wrap: break-word; /* Permet de couper les mots longs si nécessaire */
+    max-width: 100%; /* Permet au contenu de s'étendre */
+    display: flex; /* Active le mode flexbox */
+    align-items: center; /* Centre verticalement les éléments */
+    gap: 15px; /* Ajoute un espacement horizontal entre l'heure et les infos */
+  }
+
+  .ActionE span {
+    display: block; /* Force chaque partie à occuper une ligne distincte */
+  }
+
+  .personName {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0; /* Supprime les marges */
+    line-height: 1; /* Réduit l'espacement vertical entre les lignes */
+  }
+
+  .personDetails {
+    font-size: 12px;
+    color: #555555; /* Couleur légèrement plus claire pour les détails */
+    margin: 0; /* Supprime les marges */
+    line-height: 1.2; /* Réduit l'espacement vertical entre les lignes */
+    top: 18px; /* Ajoute un espace entre le nom et les détails */
+  }
+  
+  .ActionEbutton {
+    background-color: #ffffff;
+    margin: 20px auto; /* Centre horizontalement */
+    top: 37px;
+    width: 150% !important; /* Conserve la largeur actuelle */
+    max-width: none !important; /* Conserve l'absence de limite */
+    height: 78px; /* Conserve la hauteur actuelle */
+    border-radius: 28px;
+    border: none;
+    padding-left: 25px; /* Conserve le padding actuel */
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.161);
+  
+    /* Propriétés pour centrer le texte */
+    display: flex; 
+    justify-content: flex-start; /* Aligne le texte à gauche */
+    align-items: center; /* Centre verticalement */
+    text-align: left; /* Assure que le texte est aligné à gauche */
+  }
+  
+  .ActionEbuttonoveroff {
+    background-color: #706e6e;
+    margin: 10px;
+    width: 40%; /* Largeur relative */
+    max-width: 300px; /* Limite la largeur maximale */
+    height: 50px; /* Hauteur fixe */
+    border-radius: 20px; /* Coins arrondis */
+    border: none;
+    padding: 0; /* Supprime le padding pour éviter les débordements */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.161);
+
+    /* Centrage du contenu */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Aligne le texte au centre */
+    font-family: BR Sonoma Semibold;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animation pour un effet au survol */
+  }
+
+  .ActionEbuttonoveron {
+    background-color: #444444;
+    margin: 10px;
+    width: 40%; /* Largeur relative */
+    max-width: 300px; /* Limite la largeur maximale */
+    height: 50px; /* Hauteur fixe */
+    border-radius: 20px; /* Coins arrondis */
+    border: none;
+    padding: 0; /* Supprime le padding pour éviter les débordements */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.161);
+
+    /* Centrage du contenu */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Aligne le texte au centre */
+    font-family: BR Sonoma Semibold;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animation pour un effet au survol */
+  }
+
+  .ActionEbuttonoveroff:hover {
+    background-color: #5a5a5a; /* Couleur au survol */
+  }
+
+  .ActionEbuttonoveron:hover {
+    background-color: #333333; /* Couleur au survol */
+  }
+
+    .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Assure que la modale est au-dessus de tout */
+  }
+  
+  .modalContent {
+    backdrop-filter: blur(2px); /* Applique un flou de 8px (équivalent à 82 %) */
+    background-color: rgba(255, 255, 255, 0.3); /* Fond semi-transparent */
+    border-radius: 25px; /* Coins arrondis */
+    padding: 30px; /* Espacement interne */
+    width: 90%; /* Largeur relative */
+    max-width: 400px; /* Largeur maximale */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre */
+    text-align: center; /* Centre le texte */
+  }
+  
+  .modalHeader {
+    font-family: "BR Sonoma Semibold", sans-serif; /* Police existante */
+    font-size: 24px; /* Taille de police */
+    color: #000000; /* Couleur noire */
+    margin-bottom: 20px; /* Espacement sous le titre */
+  }
+  
+  .modalBody {
+    font-family: "BR Sonoma Semibold", sans-serif; /* Police existante */
+    font-size: 16px; /* Taille de police */
+    color: #555555; /* Couleur grise */
+    margin-bottom: 20px; /* Espacement sous le texte */
+  }
+  
+  .modalLink {
+    color: #007bff; /* Couleur bleue pour le lien */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Texte en gras */
+  }
+  
+  .modalLink:hover {
+    text-decoration: underline; /* Soulignement au survol */
+  }
+  
+  .modalButton {
+    background-color: #444444; /* Couleur de fond du bouton */
+    color: #ffffff; /* Couleur du texte */
+    font-family: "BR Sonoma Semibold", sans-serif; /* Police existante */
+    font-size: 16px; /* Taille de police */
+    border: none; /* Supprime la bordure */
+    border-radius: 25px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Animation au survol */
+  }
+  
+  .modalButton:hover {
+    background-color: #555555; /* Couleur légèrement plus claire au survol */
+  }
+  
+  .statviewers {
+    display: flex; /* Affiche les sections côte à côte */
+    margin: 20px auto; /* Centre horizontalement */
+    width: 150%; /* Largeur du conteneur */
+    max-width: 100%; /* Supprime les limites */
+    height: 380px; /* Hauteur du conteneur */
+    border-radius: 28px;
+    border: none;
+    overflow: hidden; /* Cache les éléments qui débordent */
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.161);
+  }
+
+.logo {
+  pointer-events: none; /* Désactive toutes les interactions utilisateur */
+  user-select: none; /* Empêche la sélection de l'image */
+  -webkit-user-drag: none; /* Empêche le glisser-déposer sur les navigateurs WebKit */
+  -webkit-touch-callout: none; /* Empêche le menu contextuel on iOS */
+  width: 0;
+}
+  
+  .statviewers .left {
+    background-color: #dbfff3; /* Couleur du côté gauche */
+    flex: 1; /* Prend 50% de la largeur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .statviewers .right {
+    background-color: #528478; /* Couleur du côté droit */
+    flex: 1; /* Prend 50% de la largeur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .statviewers h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .statviewers p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Boutons de navigation pour le carrousel */
+  .statviewers .prev,
+  .statviewers .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .statviewers .prev {
+    left: 10px;
+  }
+  
+  .statviewers .next {
+    right: 10px;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 700px) {
+    .content {
+      padding: 4rem;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      margin-bottom: 120px;
+      text-align: center;
+    }
+    .card {
+      padding: 1rem 2.5rem;
+    }
+    .center {
+      padding: 8rem 0 6rem;
+    }
+    .description p {
+      padding: 2rem 1rem 1.4rem;
+      background: linear-gradient(to bottom, rgba(var(--background-start-rgb), 1), rgba(var(--callout-rgb), 0.5));
+    }
+  }
+  
+  /* Tablet and Smaller Desktop */
+  @media (min-width: 701px) and (max-width: 1120px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .subtitle {
+    margin-top: 20px; /* Ajustez pour un alignement uniforme */
+  }
+  
+  .subtitleAligned {
+    margin: 0 !important; /* Supprime toutes les marges */
+    padding: 0 !important; /* Supprime tous les paddings */
+    text-align: left !important; /* Aligne le texte à gauche */
+    display: block !important; /* Assure que chaque sous-titre occupe une ligne entière */
+    width: 100% !important; /* Force la largeur à 100% du conteneur parent */
+    box-sizing: border-box !important; /* Inclut le padding et la bordure dans la largeur */
+    margin-left: 25px !important; /* Aligne tous les sous-titres sur le même point horizontal */
+  }
+
+  .date {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+    font-size: 18px;
+    margin-top: 14px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    text-align: start;
+
+  }
+
+  .time {
+    font-family: BR Sonoma Semibold;
+    color: #a5a3a3;
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: -32px;
+  }
+
+    .singleLine {
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    overflow: hidden; /* Cache tout débordement */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si nécessaire */
+  }
+  
+  .emoji {
+    margin-left: 5px; /* Ajoute un petit espacement entre le texte et l'emoji */
+  }
+
+  /* Styles pour le composant Login */
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les champs et le bouton */
+    gap: 20px; /* Augmente l'espacement entre les éléments */
+    width: 100%;
+    max-width: 400px;
+    background-color: #e0dbdd; /* Correspond à la couleur de .container1 */
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .formGroup {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .label {
+    font-family: BR Sonoma Semibold;
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .input {
+    width: 92%; /* Prend toute la largeur disponible */
+    max-width: 400px; /* Augmente la largeur maximale */
+    height: 60px; /* Augmente la hauteur */
+    border-radius: 25px; /* Coins arrondis validés */
+    border: 1px solid #ccc; /* Bordure légère */
+    padding: 0 15px; /* Augmente l'espacement interne */
+    font-family: BR Sonoma Semibold;
+    font-size: 16px; /* Augmente la taille de la police */
+    color: #000000;
+  }
+
+  .button {
+    width: 60%; /* Prend toute la largeur disponible */
+    max-width: 400px; /* Augmente la largeur maximale pour correspondre aux champs */
+    height: 60px; /* Augmente la hauteur pour correspondre aux champs */
+    border-radius: 25px; /* Coins arrondis validés */
+    border: none;
+    background-color: #444444; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    font-family: BR Sonoma Semibold;
+    font-size: 16px; /* Augmente la taille de la police */
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Centre le texte horizontalement */
+    align-items: center; /* Centre le texte verticalement */
+    transition: background-color 0.3s ease; /* Animation pour un effet au survol */
+  }
+
+  .button:hover {
+    background-color: #555555; /* Couleur légèrement plus claire au survol */
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Assure que le conteneur occupe toute la hauteur de la page */
+  }
+
+  .signupText {
+    font-size: 13px;
+    color: #000;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "BRSonoma Semibold", sans-serif;
+    cursor: pointer;
+  }
+
+  .signupLink {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .signupLink:hover {
+    text-decoration: underline;
+  }
+
+  .selectCurrency {
+    font-family: BR Sonoma Semibold;
+    font-size: 1rem;
+    color: #000;
+    background: #fff;
+    border: 1px solid #a5a3a3;
+    border-radius: 18px;
+    padding: 8px 18px;
+    margin-left: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .selectCurrency:focus {
+    border-color: #528478;
+  }
+
+  .selectCurrency option {
+    font-family: BR Sonoma Semibold;
+    color: #000;
+    background: #fff;
+  }

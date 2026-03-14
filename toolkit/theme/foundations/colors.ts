@@ -2,16 +2,31 @@ import { defaultsDeep } from 'es-toolkit/compat';
 
 import config from 'configs/app';
 
+// Chemin correct vers l'image (depuis le dossier public/ du frontend)
+const SLURA_ICON_PATH = '/icons/Slura.png'; // Assure-toi que l'image est dans public/icons/Slura.png
+
 const DEFAULT_THEME_COLORS = {
   bg: {
     primary: {
-      // for some reason links to colors.white and colors.black variables are not working here
-      // so we use hex values instead
-      // but it is not the case for other colors
-      _light: { value: '#14151fff' }, // colors.white
-      _dark: { value: '#101112' }, // colors.black
+      // Fallback couleurs solides (au cas où l'image ne charge pas ou pour compatibilité)
+      _light: { value: '#f8f9fa' }, // Gris très clair / presque blanc en light
+      _dark: { value: '#101112' }, // Noir profond en dark (comme avant)
     },
   },
+
+  // NOUVEAU : token dédié pour l'image de fond Slura (utilisable via bgImage ou backgroundImage)
+  image: {
+    sluraPrimary: {
+      _light: { value: `url(${ SLURA_ICON_PATH })` },
+      _dark: { value: `url(${ SLURA_ICON_PATH })` },
+    },
+    // Variante avec overlay pour améliorer la lisibilité du texte (surtout en dark mode)
+    sluraPrimaryOverlay: {
+      _light: { value: `linear-gradient(rgba(248,249,250,0.35), rgba(248,249,250,0.35)), url(${ SLURA_ICON_PATH })` },
+      _dark: { value: `linear-gradient(rgba(16,17,18,0.75), rgba(16,17,18,0.75)), url(${ SLURA_ICON_PATH })` },
+    },
+  },
+
   text: {
     primary: {
       _light: { value: '{colors.blackAlpha.800}' },
@@ -285,7 +300,7 @@ const colors = {
   celo: { value: '#FCFF52' },
   clusters: { value: '#DE6061' },
 
-  // THEME COLORS
+  // THEME COLORS (fusion avec overrides)
   theme: defaultsDeep(config.UI.colorTheme.overrides, DEFAULT_THEME_COLORS),
 };
 

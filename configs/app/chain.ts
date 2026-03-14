@@ -34,22 +34,22 @@ const rpcUrls = (() => {
 })();
 
 const chain = Object.freeze({
-  id: getEnvValue('NEXT_PUBLIC_NETWORK_ID'),
-  name: getEnvValue('NEXT_PUBLIC_NETWORK_NAME'),
-  shortName: getEnvValue('NEXT_PUBLIC_NETWORK_SHORT_NAME'),
+  id: 45057,
+  name: 'Vyft slura charène',
+  shortName: 'Slura',
   currency: {
-    name: getEnvValue('NEXT_PUBLIC_NETWORK_CURRENCY_NAME'),
-    weiName: getEnvValue('NEXT_PUBLIC_NETWORK_CURRENCY_WEI_NAME'),
-    gweiName: getEnvValue('NEXT_PUBLIC_NETWORK_CURRENCY_GWEI_NAME'),
-    symbol: getEnvValue('NEXT_PUBLIC_NETWORK_CURRENCY_SYMBOL'),
+    name: 'Vyft Enhancing ZER',
+    weiName: 'naeït',
+    gweiName: 'Gnaeït',
+    symbol: 'VEZ',
     decimals: Number(getEnvValue('NEXT_PUBLIC_NETWORK_CURRENCY_DECIMALS')) || DEFAULT_CURRENCY_DECIMALS,
   },
   secondaryCoin: {
-    symbol: getEnvValue('NEXT_PUBLIC_NETWORK_SECONDARY_COIN_SYMBOL'),
+    symbol: 'WVEZ',
   },
   hasMultipleGasCurrencies: getEnvValue('NEXT_PUBLIC_NETWORK_MULTIPLE_GAS_CURRENCIES') === 'true',
-  tokenStandard: getEnvValue('NEXT_PUBLIC_NETWORK_TOKEN_STANDARD_NAME') || 'ERC',
-  additionalTokenTypes: parseEnvJson<Array<AdditionalTokenType>>(getEnvValue('NEXT_PUBLIC_NETWORK_ADDITIONAL_TOKEN_TYPES')) || [],
+  tokenStandard: getEnvValue('NEXT_PUBLIC_NETWORK_TOKEN_STANDARD_NAME') || 'SLURC',
+  additionalTokenTypes: parseEnvJson<Array<AdditionalTokenType>>('ERC') || [],
   rpcUrls,
   isTestnet: getEnvValue('NEXT_PUBLIC_IS_TESTNET') === 'true',
   verificationType,

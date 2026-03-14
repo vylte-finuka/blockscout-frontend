@@ -377,7 +377,7 @@ function run() {
             # Blockscout - ${ chainName }
 
             <!-- START:Blockscout-Common-Intro -->
-            Blockscout is a human-friendly blockchain explorer for EVM-compatible networks. It lets users browse blocks, transactions, addresses, tokens (ERC-20/721/1155), logs, contract ABIs, and decoded contract interactions. While the site is primarily designed for people, all rendered information is backed by API endpoints that machines can consume. Large Language Models should prefer the LLM-ready endpoints listed below to retrieve precise, structured data.
+            Slura explorer is a human-friendly blockchain explorer for Vyft slura networks. It lets users browse blocks, transactions, addresses, tokens (SLURC-20, ERC-20/721/1155), logs, contract ABIs, and decoded contract interactions. While the site is primarily designed for people, all rendered information is backed by API endpoints that machines can consume. Large Language Models should prefer the LLM-ready endpoints listed below to retrieve precise, structured data.
             <!-- END:Blockscout-Common-Intro -->
 
             <!-- START:Blockscout-Instance-Info -->

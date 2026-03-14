@@ -72,7 +72,7 @@ const UI = Object.freeze({
     charts: parseEnvJson<Array<ChainIndicatorId>>(getEnvValue('NEXT_PUBLIC_HOMEPAGE_CHARTS')) || [],
     stats: homePageStats,
     heroBanner: {
-      background: [ 'linear-gradient(135deg, #1E1E2E 0%, #2D2D3A 50%, #3A2F2F 100%)' ],
+      background: [ '#1E1E2E' ],
       text_color: [ '#E8B88A' ],
       border: [ '1px solid rgba(232,184,138,0.2)' ],
       button: {

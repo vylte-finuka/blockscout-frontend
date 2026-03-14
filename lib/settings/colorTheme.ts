@@ -46,7 +46,7 @@ export function getThemeHexWithOverrides(colorThemeId: ColorThemeId) {
   }
 
   return defaultHex;
-};
+}
 
 export function getDefaultColorTheme(colorMode: ColorMode) {
   const colorTheme = COLOR_THEMES.filter((theme) => theme.colorMode === colorMode).slice(-1)[0];
@@ -60,27 +60,35 @@ export const COLOR_THEMES: Array<ColorTheme> = [
     label: 'Light',
     colorMode: 'light',
     hex: '#FFFFFF',
-    sampleBg: 'linear-gradient(154deg, #EFEFEF 50%, rgba(255, 255, 255, 0.00) 330.86%)',
+    // Image Slura en mode Light (overlay très clair)
+    sampleBg:
+      'linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url(/icons/Slura.png)',
   },
   {
     id: 'dim',
     label: 'Dim',
     colorMode: 'dark',
     hex: '#232B37',
-    sampleBg: 'linear-gradient(152deg, #232B37 50%, rgba(255, 255, 255, 0.00) 290.71%)',
+    // Image Slura en mode Dark (overlay moyen)
+    sampleBg:
+      'linear-gradient(rgba(35,43,55,0.75), rgba(35,43,55,0.75)), url(/icons/Slura.png)',
   },
   {
     id: 'midnight',
     label: 'Midnight',
     colorMode: 'dark',
     hex: '#1B2E48',
-    sampleBg: 'linear-gradient(148deg, #1B3F71 50%, rgba(255, 255, 255, 0.00) 312.35%)',
+    // Image Slura en mode Midnight (overlay plus sombre)
+    sampleBg:
+      'linear-gradient(rgba(27,46,72,0.82), rgba(27,46,72,0.82)), url(/icons/Slura.png)',
   },
   {
     id: 'dark',
     label: 'Dark',
     colorMode: 'dark',
     hex: '#101112',
-    sampleBg: 'linear-gradient(161deg, #000 9.37%, #383838 92.52%)',
+    // Image Slura en mode Dark pur (overlay le plus sombre)
+    sampleBg:
+      'linear-gradient(rgba(16,17,18,0.85), rgba(16,17,18,0.85)), url(/icons/Slura.png)',
   },
 ];

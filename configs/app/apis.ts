@@ -24,7 +24,7 @@ const generalApi = (() => {
   }
 
   const apiSchema = getEnvValue('NEXT_PUBLIC_API_PROTOCOL') || 'https';
-  const apiPort = '4000';
+  const apiPort = '8080';
   const apiEndpoint = [
     apiSchema || 'https',
     '://',

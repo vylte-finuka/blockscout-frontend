@@ -1,6 +1,7 @@
 import type { GridProps, HTMLChakraProps } from '@chakra-ui/react';
 import { Box, Grid, Flex, Text, VStack } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
+import SquareAIFloat from 'app/SquareAIFloat';
 import React from 'react';
 
 import type { CustomLinksGroup } from 'types/footerLinks';
@@ -139,7 +140,7 @@ const Footer = () => {
           </Link>
         </Flex>
         <Text mt={ 3 } fontSize="xs">
-          Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.
+          Slura explorer is a built with IA agent Nérethense for help build future with Vyft slura ⚡.
         </Text>
         <Box mt={ 6 } alignItems="start" textStyle="xs">
           { apiVersionUrl && (
@@ -153,7 +154,7 @@ const Footer = () => {
             </Text>
           ) }
           <Text>
-            Copyright { copy } Blockscout Limited 2023-{ (new Date()).getFullYear() }
+            Copyright { copy } Vyft SAS 2026-{ (new Date()).getFullYear() }
           </Text>
         </Box>
       </Box>
@@ -270,6 +271,7 @@ const Footer = () => {
           { BLOCKSCOUT_LINKS.map(link => <FooterLinkItem { ...link } key={ link.text }/>) }
         </Grid>
       </Grid>
+      <SquareAIFloat/>
     </Box>
   );
 };

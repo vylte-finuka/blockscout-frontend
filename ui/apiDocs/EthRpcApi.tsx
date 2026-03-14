@@ -8,10 +8,10 @@ const EthRpcApi = () => {
     <Box>
       <Text>
         In addition to the custom RPC endpoints documented here,
-        the Blockscout ETH RPC API supports 3 methods in the exact format specified for Ethereum nodes,
-        ee the Ethereum JSON-RPC Specification for more details.
+        the Slura explorer VEZ RPC API supports 3 methods in the exact format specified for Slura nodes,
+        ee the Ethereum-based JSON-RPC Specification for more details.
       </Text>
-      <Link href="https://docs.blockscout.com/devs/apis/rpc/eth-rpc" external mt={ 6 }>View examples</Link>
+      <Link href="https://ethereum.github.io/execution-apis/" external mt={ 6 }>View examples</Link>
     </Box>
   );
 };
