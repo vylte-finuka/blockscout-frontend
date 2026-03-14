@@ -13,7 +13,7 @@ type Message = { from: 'ai' | 'user'; text: string };
 
 // IA via OpenAI API (GPT-4o) via API interne sécurisée
 async function callmodelAPI(messages: Array<Message>): Promise<string> {
-  const res = await fetch('/api/ask-ai', {
+  const res = await fetch('https://vyft-program.vylte-finuka.com/api/ask-ai', {
     method: 'POST',
     // eslint-disable-next-line no-restricted-properties
     headers: { 'Content-Type': 'application/json', 'x-vyftprogram-api-key': process.env.NEXT_PUBLIC_VYFTPROGRAM_API_KEY || '' },
@@ -25,7 +25,7 @@ async function callmodelAPI(messages: Array<Message>): Promise<string> {
 
 async function getComptaData(enseigne: string, squareCustomerId: string) {
   const res = await fetch(
-    `/api/vyfthealth_proc?enseigne=${ encodeURIComponent(
+    `https://vyft-program.vylte-finuka.com/api/vyfthealth_proc?enseigne=${ encodeURIComponent(
       enseigne,
     ) }&squareCustomerId=${ encodeURIComponent(squareCustomerId) }`,
     {
@@ -147,7 +147,7 @@ export default function SquareAIFloat() {
 
     // Sinon, on précharge la page CGVU en arrière-plan et on extrait le JSON
     if (!cgvu) {
-      fetch('/conditions-generales-d-utilisation')
+      fetch('https://vyft-program.vylte-finuka.com/conditions-generales-d-utilisation')
         .then(res => res.text())
         .then(html => {
           // Extraction du contenu du script JSON
@@ -174,7 +174,7 @@ export default function SquareAIFloat() {
     setInput('');
 
     // Commande spéciale /compta
-    if (input.trim().toLowerCase() === '/compta') {
+    if (input.trim().toLowerCase() === 'https://vyft-program.vylte-finuka.com/compta') {
       if (!comptaData) {
         setMessages((msgs) => [
           ...msgs,
