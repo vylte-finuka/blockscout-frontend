@@ -48,14 +48,7 @@ const HeroBanner = () => {
     _dark:
       config.UI.homepage.heroBanner?.border?.[1] || config.UI.homepage.heroBanner?.border?.[0] || BORDER_DEFAULT,
   };
-
-  fonts: {
-  heading: 'BRSonomabold, system-ui, sans-serif',
-  // ou si tu veux seulement pour ce composant :
-  BRSonomabold: 'BRSonomabold, sans-serif',
-},
   
-
   return (
     <Flex
       w="100%"
