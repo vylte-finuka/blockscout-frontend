@@ -65,7 +65,7 @@ const HeroBanner = () => {
             as="h1"
             fontSize={{ base: '18px', lg: '30px' }}
             lineHeight={{ base: '24px', lg: '36px' }}
-            fontFamily="BRSonomabold"
+            fontFamily="BR Sonoma Semibold"
             fontWeight={{ base: 500, lg: 700 }}
             color={ textColor }
           >
