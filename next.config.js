@@ -20,15 +20,13 @@ const moduleExports = {
     config.module.rules.push(
       {
         test: /\.svg$/,
-        use: [ '@svgr/webpack' ],
+        use: ['@svgr/webpack'],
       },
     );
     config.resolve.fallback = { fs: false, net: false, tls: false };
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
-    
+
     config.experiments = { ...config.experiments, topLevelAwait: true };
-    // Tell webpack the target supports async/await so it stops warning about top-level await
-    // Top-level await is belong to ES2017 specification that is adopted by all major browsers and Node.js.
     config.output.environment = {
       ...config.output.environment,
       asyncFunction: true,
@@ -36,20 +34,53 @@ const moduleExports = {
 
     return config;
   },
+
   // NOTE: all config functions should be static and not depend on any environment variables
-  // since all variables will be passed to the app only at runtime and there is now way to change Next.js config at this time
-  // if you are stuck and strongly believe what you need some sort of flexibility here please fill free to join the discussion
-  // https://github.com/blockscout/frontend/discussions/167
   rewrites,
   redirects,
-  headers,
+
+  // On étend les headers existants pour ajouter une CSP correcte
+  async headers() {
+    // Récupère les headers existants (si définis dans ./nextjs/headers.js)
+    const existingHeaders = (await headers()) || [];
+
+    return [
+      ...existingHeaders,
+      {
+        // Applique à toutes les pages
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // unsafe-eval souvent requis pour Next.js en dev
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: blob: https:",
+              "font-src 'self' data:",
+              "connect-src 'self' https://www.vylte-finuka.com",  // ← LIGNE CRITIQUE : ton domaine externe
+              "frame-src 'self'",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join('; '),
+          },
+          // Headers de sécurité bonus (optionnels mais recommandés)
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+        ],
+      },
+    ];
+  },
+
   output: 'standalone',
   productionBrowserSourceMaps: false,
   serverExternalPackages: ["@opentelemetry/sdk-node", "@opentelemetry/auto-instrumentations-node"],
   experimental: {
     staleTimes: {
       dynamic: 30,
-      'static': 180,
+      static: 180,
     },
   },
 };
