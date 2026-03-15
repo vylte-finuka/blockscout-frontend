@@ -10,6 +10,7 @@ Vyft est une marque déposée de Vyft SAS ex Vylte-finuka. La carte de débit Vy
 ## 1. Définitions
 - **Client** : Toute personne physique ayant souscrit à un compte Vyft.
 - **Compte** : Portefeuille auto-géré basé sur l'actif EURC et VEZ du réseau Vyft slura, accessible via l'application Vyft.
+- **Vyft slura** : A Unrivaled smart contract platform parallel EVM up 3 millions TOPS  with zkEVM-like Exécution for post quantum  built sport,ecology and other hight level tech industries. 
 - **Services** : Services financiers numériques proposés par Vyft, incluant la carte de débit Vyft slide, les virements SEPA via MetaMask, et les fonctionnalités futures (assurances, trading, cashback).
 - **Application** : Application mobile Vyft, disponible sur iOS et Android.
 - **VEZ** : Actif numérique basé et gas token du réseau Vyft slura il sera utiliser comme base primaire pour le compte Vyft. 
