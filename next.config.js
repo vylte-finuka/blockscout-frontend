@@ -38,17 +38,12 @@ const moduleExports = {
   rewrites,
   redirects,
 
-  // ──────────────────────────────────────────────────────────────
-  // AJOUT : Gestion complète de la CSP pour autoriser www.vylte-finuka.com
-  // ──────────────────────────────────────────────────────────────
   async headers() {
-    // Récupère les headers déjà définis dans ./nextjs/headers.js (si existants)
     const existingHeaders = (await headers()) || [];
 
     return [
       ...existingHeaders,
       {
-        // Applique à TOUTES les pages
         source: '/:path*',
         headers: [
           {
@@ -59,17 +54,14 @@ const moduleExports = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self' data: https:",
-              // Ligne critique : autorise les fetch / websocket / etc vers ton domaine
               "connect-src 'self' https://www.vylte-finuka.com https://*.vylte-finuka.com",
               "frame-src 'self'",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
-              // Optionnel : upgrade HTTP → HTTPS
               "upgrade-insecure-requests",
             ].join('; '),
           },
-          // Headers de sécurité recommandés (bonus)
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'DENY' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
@@ -86,6 +78,11 @@ const moduleExports = {
       dynamic: 30,
       static: 180,
     },
+  },
+
+  // Ajout demandé : ignorer les erreurs TypeScript pendant le build
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
