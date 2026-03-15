@@ -8,7 +8,7 @@
     "npm": ">=10.9.0"
   },
   "scripts": {
-    "build": "NODE_OPTIONS=--max_old_space_size=4096 next build"
+    "build": "NEXT_LINT_DURING_BUILD=false NODE_OPTIONS=--max_old_space_size=4096 next build"
   },
   "dependencies": {
     "@blockscout/bens-types": "1.4.1",
