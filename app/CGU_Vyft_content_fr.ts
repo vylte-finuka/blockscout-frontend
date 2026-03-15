@@ -1,4 +1,4 @@
-const CGU_Vyft_content_fr = `
+const CguVyftContentFr = `
 # Conditions Générales d'Utilisation (CGU) - Vyft
 
 **Dernière mise à jour : 15 mars 2026**
