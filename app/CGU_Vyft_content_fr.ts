@@ -1,18 +1,19 @@
 const CGU_Vyft_content_fr = `
 # Conditions Générales d'Utilisation (CGU) - Vyft
 
-**Dernière mise à jour : 08 août 2025**
+**Dernière mise à jour : 15 mars 2026**
 
 Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation des services proposés par **Vyft**, une "néobanque" (terme utilisé à titre indicatif, Vyft n'étant pas encore agréé par l'Autorité de Contrôle Prudentiel et de Résolution - ACPR) exploitée par **Vylte-Finuka SARL**, une société enregistrée en France au 60 Rue François 1er, 75008 Paris, SIRET : 92978865100016. En utilisant nos services, vous acceptez sans réserve ces CGU. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services.
 
-Vyft est une marque déposée de Vylte-Finuka SARL. La carte de débit Vyft slide est co-brandée avec **Visa**, une marque déposée de Visa Inc. Le design de la carte Vyft slide est protégé par les droits de propriété intellectuelle.
+Vyft est une marque déposée de Vyft SAS ex Vylte-finuka. La carte de débit Vyft slide est co-brandée avec **Visa**, une marque déposée de Visa Inc. Le design de la carte Vyft slide est protégé par les droits de propriété intellectuelle.
 
 ## 1. Définitions
 - **Client** : Toute personne physique ayant souscrit à un compte Vyft.
-- **Compte** : Portefeuille auto-géré basé sur l'actif EURC du réseau Avalanche, accessible via l'application Vyft.
+- **Compte** : Portefeuille auto-géré basé sur l'actif EURC et VEZ du réseau Vyft slura, accessible via l'application Vyft.
 - **Services** : Services financiers numériques proposés par Vyft, incluant la carte de débit Vyft slide, les virements SEPA via MetaMask, et les fonctionnalités futures (assurances, trading, cashback).
 - **Application** : Application mobile Vyft, disponible sur iOS et Android.
-- **EURC** : Actif numérique basé sur le réseau Avalanche, utilisé comme base pour le compte Vyft.
+- **VEZ** : Actif numérique basé et gas token du réseau Vyft slura il sera utiliser comme base primaire pour le compte Vyft. 
+- **EURC** : Actif numérique basé sur le réseau Vyft slura, utilisé comme base pour le compte Vyft.
 - **MetaMask** : Marque déposée de ConsenSys, utilisée pour effectuer des virements SEPA.
 
 ## 2. Objet
@@ -34,7 +35,7 @@ L'ouverture d'un compte se fait exclusivement via l'application mobile Vyft en s
 2. Acceptation des présentes CGU et de la politique de confidentialité.
 3. Validation du compte dans un délai de 24 heures.
 
-Le compte Vyft est un **portefeuille auto-géré** basé sur l'actif EURC du réseau Avalanche. Aucun IBAN intégré n'est fourni pour le moment, mais des IBANs intégrés seront proposés à l'avenir, sous réserve des conditions applicables.
+Le compte Vyft est un **portefeuille auto-géré** basé sur l'actif EURC et VEZ du réseau Vyft slura. Aucun IBAN intégré n'est fourni pour le moment, mais des IBANs intégrés seront proposés à l'avenir, sous réserve des conditions applicables.
 
 ## 5. Services Proposés
 ### 5.1 Compte Vyft
