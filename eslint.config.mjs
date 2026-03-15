@@ -59,7 +59,17 @@ const gitignorePath = path.resolve(__dirname, '.gitignore');
 
 /** @type {import('eslint').Linter.Config[]} */
 export default tseslint.config(
+  // Ignore les fichiers du .gitignore (déjà présent)
   includeIgnoreFile(gitignorePath),
+
+  // Ajout des ignores globaux que tu as demandés
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
+  ]),
 
   { files: [ '**/*.{js,mjs,cjs,ts,jsx,tsx}', '**/*.pw.tsx' ] },
 
