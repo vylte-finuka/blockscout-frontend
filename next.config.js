@@ -35,37 +35,41 @@ const moduleExports = {
     return config;
   },
 
-  // NOTE: all config functions should be static and not depend on any environment variables
   rewrites,
   redirects,
 
-  // On étend les headers existants pour ajouter une CSP correcte
+  // ──────────────────────────────────────────────────────────────
+  // AJOUT : Gestion complète de la CSP pour autoriser www.vylte-finuka.com
+  // ──────────────────────────────────────────────────────────────
   async headers() {
-    // Récupère les headers existants (si définis dans ./nextjs/headers.js)
+    // Récupère les headers déjà définis dans ./nextjs/headers.js (si existants)
     const existingHeaders = (await headers()) || [];
 
     return [
       ...existingHeaders,
       {
-        // Applique à toutes les pages
+        // Applique à TOUTES les pages
         source: '/:path*',
         headers: [
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // unsafe-eval souvent requis pour Next.js en dev
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
-              "font-src 'self' data:",
-              "connect-src 'self' https://www.vylte-finuka.com",  // ← LIGNE CRITIQUE : ton domaine externe
+              "font-src 'self' data: https:",
+              // Ligne critique : autorise les fetch / websocket / etc vers ton domaine
+              "connect-src 'self' https://www.vylte-finuka.com https://*.vylte-finuka.com",
               "frame-src 'self'",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
+              // Optionnel : upgrade HTTP → HTTPS
+              "upgrade-insecure-requests",
             ].join('; '),
           },
-          // Headers de sécurité bonus (optionnels mais recommandés)
+          // Headers de sécurité recommandés (bonus)
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'DENY' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
