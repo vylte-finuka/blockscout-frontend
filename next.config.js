@@ -15,7 +15,7 @@ const moduleExports = {
   transpilePackages: [
     'react-syntax-highlighter',
   ],
-  reactStrictMode: true,
+  reactStrictMode: false,
   webpack(config) {
     config.module.rules.push(
       {
