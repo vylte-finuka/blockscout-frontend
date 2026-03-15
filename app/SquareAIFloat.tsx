@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import secureLocalStorage from 'react-secure-storage';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-import CGU_Vyft_content_fr from './CGU_Vyft_content_fr'; // Assure-toi que ce fichier existe et est exporté
+import CguVyftContentFr from './CGU_Vyft_content_fr'; // Assure-toi que ce fichier existe et est exporté
 import styles from './page.module.css';
 type Message = { from: 'ai' | 'user'; text: string };
 
