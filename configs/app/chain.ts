@@ -21,7 +21,7 @@ const verificationType: NetworkVerificationType = (() => {
 })();
 
 const rpcUrls = (() => {
-  const envValue = 'https://slu-charene.vylte-finuka.com';
+  const envValue = 'https://slu-charene.vyft-one.com';
   const isUrl = urlValidator(envValue);
 
   if (envValue && isUrl === true) {
