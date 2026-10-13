@@ -106,7 +106,9 @@
     "valibot": "1.2.0",
     "viem": "2.41.2",
     "wagmi": "2.19.5",
-    "xss": "^1.0.14"
+    "xss": "^1.0.14",
+    "@wagmi/core": "2.22.1",
+    "@wagmi/connectors": "6.2.0"
   },
   "devDependencies": {
     "@chakra-ui/cli": "3.33.0",
@@ -183,7 +185,18 @@
       "brace-expansion": "1.1.12",
       "js-yaml": "4.1.1",
       "@noble/hashes": "1.8.0",
-      "@wagmi/connectors": "6.2.0"
+      "@wagmi/connectors": "6.2.0",
+      "@wagmi/core": "2.22.1"
     }
+  },
+  "resolutions": {
+    "@wagmi/connectors": "6.2.0",
+    "@wagmi/core": "2.22.1",
+    "**/@wagmi/connectors": "6.2.0",
+    "**/@wagmi/core": "2.22.1"
+  },
+  "overrides": {
+    "@wagmi/connectors": "6.2.0",
+    "@wagmi/core": "2.22.1"
   }
 }
