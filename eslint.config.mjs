@@ -62,14 +62,15 @@ export default tseslint.config(
   // Ignore les fichiers du .gitignore (déjà présent)
   includeIgnoreFile(gitignorePath),
 
-  // Ajout des ignores globaux que tu as demandés
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-  ]),
+  // Default ignores of eslint-config-next (portable, no globalIgnores helper)
+  {
+    ignores: [
+      '.next/**',
+      'out/**',
+      'build/**',
+      'next-env.d.ts',
+    ],
+  },
 
   { files: [ '**/*.{js,mjs,cjs,ts,jsx,tsx}', '**/*.pw.tsx' ] },
 
