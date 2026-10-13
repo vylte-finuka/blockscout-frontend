@@ -87,8 +87,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ## Adding permission
-RUN --chmod=755 ./deploy/scripts/build_sprite.sh
-RUN --chmod=755 ./deploy/scripts/collect_envs.sh
+RUN chmod +x ./deploy/scripts/build_sprite.sh
+RUN chmod +x ./deploy/scripts/collect_envs.sh
 
 # Build SVG sprite and generate .env.registry with ENVs list and save build args into .env file
 RUN set -a && \
