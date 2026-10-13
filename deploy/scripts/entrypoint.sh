@@ -91,5 +91,8 @@ node --no-warnings ./deploy/tools/llms-txt-generator/dist/index.js
 # Print list of enabled features
 node --no-warnings ./feature-reporter.js
 
-echo "Starting Next.js application"
+# Bind Next standalone server (override image defaults if needed)
+export PORT="${PORT:-3010}"
+export HOSTNAME="${HOSTNAME:-0.0.0.0}"
+echo "Starting Next.js application on ${HOSTNAME}:${PORT}"
 exec "$@"

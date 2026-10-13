@@ -214,9 +214,9 @@ ENTRYPOINT ["./entrypoint.sh"]
 
 USER nextjs
 
-EXPOSE 3008
+EXPOSE 3010
 
-ENV PORT=3008
+ENV PORT=3010
 ENV HOSTNAME=0.0.0.0
 
 CMD ["node", "server.js"]
