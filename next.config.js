@@ -36,6 +36,16 @@ const moduleExports = {
     };
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
 
+    // WalletConnect / Dynamic / ox "tempo" uses dynamic require(); silence + don't fail build
+    config.ignoreWarnings = [
+      ...(config.ignoreWarnings || []),
+      { message: /Critical dependency: the request of a dependency is an expression/ },
+      { module: /node_modules[\\/]ox[\\/]/ },
+      { module: /node_modules[\\/]@walletconnect[\\/]/ },
+      { module: /node_modules[\\/]@dynamic-labs[\\/]/ },
+      { module: /node_modules[\\/]@reown[\\/]/ },
+    ];
+
     config.experiments = { ...config.experiments, topLevelAwait: true };
     config.output.environment = {
       ...config.output.environment,
