@@ -180,6 +180,7 @@ COPY --from=builder /app/deploy/tools/essential-dapps-chains-config-generator/di
 # Copy scripts
 ## Entrypoint
 COPY --chmod=755 ./deploy/scripts/entrypoint.sh .
+COPY --chmod=755 ./deploy/scripts/start-next.sh .
 ## ENV validator and client script maker
 COPY --chmod=755 ./deploy/scripts/validate_envs.sh .
 COPY --chmod=755 ./deploy/scripts/make_envs_script.sh .
@@ -219,4 +220,4 @@ EXPOSE 3010
 ENV PORT=3010
 ENV HOSTNAME=0.0.0.0
 
-CMD ["node", "server.js"]
+CMD ["./start-next.sh"]

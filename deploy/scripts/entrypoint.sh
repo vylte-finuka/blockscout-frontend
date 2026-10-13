@@ -91,8 +91,10 @@ node --no-warnings ./deploy/tools/llms-txt-generator/dist/index.js
 # Print list of enabled features
 node --no-warnings ./feature-reporter.js
 
-# Bind Next standalone server (override image defaults if needed)
-export PORT="${PORT:-3010}"
-export HOSTNAME="${HOSTNAME:-0.0.0.0}"
+# Next.js standalone defaults to 3000 if PORT is unset/empty.
+# Force 3010 (ignore host overrides that still inject 3000).
+export PORT=3010
+export HOSTNAME=0.0.0.0
 echo "Starting Next.js application on ${HOSTNAME}:${PORT}"
-exec "$@"
+# If CMD is bare "node server.js", keep it; always pass through env.
+exec env PORT=3010 HOSTNAME=0.0.0.0 "$@"
