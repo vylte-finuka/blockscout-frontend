@@ -27,14 +27,14 @@ const moduleExports = {
       fs: false,
       net: false,
       tls: false,
-      // MetaMask SDK pulls RN storage; not used in browser/Next build
-      '@react-native-async-storage/async-storage': false,
     };
+    // MetaMask SDK optionally imports RN async-storage; alias to empty stub (boolean false breaks minify)
+    const emptyStub = require('path').join(__dirname, 'webpack-stubs/empty.js');
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      '@react-native-async-storage/async-storage': false,
+      '@react-native-async-storage/async-storage': emptyStub,
     };
-    config.externals.push('pino-pretty', 'lokijs', 'encoding', '@react-native-async-storage/async-storage');
+    config.externals.push('pino-pretty', 'lokijs', 'encoding');
 
     config.experiments = { ...config.experiments, topLevelAwait: true };
     config.output.environment = {
