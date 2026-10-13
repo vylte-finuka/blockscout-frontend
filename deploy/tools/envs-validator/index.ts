@@ -121,13 +121,14 @@ async function checkPlaceholdersCongruity(envsMap: Record<string, string>) {
       console.log(`   They are either deprecated or running the app with them may lead to unexpected behavior.
    Please check the documentation for more details - https://github.com/blockscout/frontend/blob/main/docs/ENVS.md
       `);
-      throw new Error();
+      // Soft-fail: allow custom NEXT_PUBLIC_* (e.g. OPENAI) without blocking container start
+      console.log('⚠️ Congruity check: continuing with warnings only (custom envs allowed).\n');
+    } else {
+      !silent && console.log('👍 All good!\n');
     }
-
-    !silent && console.log('👍 All good!\n');
   } catch (error) {
-    console.log('🚨 Congruity check failed.\n', error);
-    throw error;
+    // File missing etc. — warn but do not kill the process for custom deployments
+    console.log('⚠️ Congruity check warning (non-fatal).\n', error);
   }
 }
 

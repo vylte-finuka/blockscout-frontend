@@ -1104,3 +1104,12 @@ To obtain the variable values, please refer to the [reCAPTCHA documentation](htt
 | Variable | Type| Description | Compulsoriness  | Default value | Example value | Version |
 | --- | --- | --- | --- | --- | --- | --- |
 | NEXT_PUBLIC_RE_CAPTCHA_APP_SITE_KEY | `string` | Google reCAPTCHA v2 site key | - | - | `<your-site-key>` | v1.0.x+ |
+
+&nbsp;
+
+### OpenAI / Square AI assistant
+
+| Variable | Type| Description | Compulsoriness  | Default value | Example value | Version |
+| --- | --- | --- | --- | --- | --- | --- |
+| NEXT_PUBLIC_OPENAI_API_KEY | `string` | API key for the on-site AI assistant (e.g. OpenAI or OpenRouter). Prefer server-side proxy in production; exposed as NEXT_PUBLIC only if the UI calls the provider from the browser. | - | - | `sk-...` | custom |
+
