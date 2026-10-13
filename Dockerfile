@@ -17,51 +17,51 @@ COPY toolkit/theme ./toolkit/theme
 COPY toolkit/utils ./toolkit/utils
 COPY toolkit/components/forms/validators/url.ts ./toolkit/components/forms/validators/url.ts
 RUN apk add git
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 
 ### FEATURE REPORTER
 # Install dependencies
 WORKDIR /feature-reporter
 COPY ./deploy/tools/feature-reporter/package.json ./deploy/tools/feature-reporter/yarn.lock ./
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 
 ### ENV VARIABLES CHECKER
 # Install dependencies
 WORKDIR /envs-validator
 COPY ./deploy/tools/envs-validator/package.json ./deploy/tools/envs-validator/yarn.lock ./
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 ### FAVICON GENERATOR
 # Install dependencies
 WORKDIR /favicon-generator
 COPY ./deploy/tools/favicon-generator/package.json ./deploy/tools/favicon-generator/yarn.lock ./
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 ### SITEMAP GENERATOR
 # Install dependencies
 WORKDIR /sitemap-generator
 COPY ./deploy/tools/sitemap-generator/package.json ./deploy/tools/sitemap-generator/yarn.lock ./
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 ### MULTICHAIN CONFIG GENERATOR
 # Install dependencies
 WORKDIR /multichain-config-generator
 COPY ./deploy/tools/multichain-config-generator/package.json ./deploy/tools/multichain-config-generator/yarn.lock ./
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 ### ESSENTIAL DAPPS CHAINS CONFIG GENERATOR
 # Install dependencies
 WORKDIR /essential-dapps-chains-config-generator
 COPY ./deploy/tools/essential-dapps-chains-config-generator/package.json ./
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 ### llms.txt GENERATOR
 # Install dependencies
 WORKDIR /llms-txt-generator
 COPY ./deploy/tools/llms-txt-generator/package.json ./deploy/tools/llms-txt-generator/yarn.lock ./
-RUN yarn --frozen-lockfile --network-timeout 100000
+RUN yarn  --network-timeout 100000
 
 
 # *****************************
