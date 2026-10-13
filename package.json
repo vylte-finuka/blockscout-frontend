@@ -108,7 +108,8 @@
     "wagmi": "2.19.5",
     "xss": "^1.0.14",
     "@wagmi/core": "2.22.1",
-    "@wagmi/connectors": "6.2.0"
+    "@wagmi/connectors": "6.2.0",
+    "@react-native-async-storage/async-storage": "2.1.2"
   },
   "devDependencies": {
     "@chakra-ui/cli": "3.33.0",

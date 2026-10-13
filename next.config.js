@@ -23,8 +23,18 @@ const moduleExports = {
         use: ['@svgr/webpack'],
       },
     );
-    config.resolve.fallback = { fs: false, net: false, tls: false };
-    config.externals.push('pino-pretty', 'lokijs', 'encoding');
+    config.resolve.fallback = {
+      fs: false,
+      net: false,
+      tls: false,
+      // MetaMask SDK pulls RN storage; not used in browser/Next build
+      '@react-native-async-storage/async-storage': false,
+    };
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      '@react-native-async-storage/async-storage': false,
+    };
+    config.externals.push('pino-pretty', 'lokijs', 'encoding', '@react-native-async-storage/async-storage');
 
     config.experiments = { ...config.experiments, topLevelAwait: true };
     config.output.environment = {
