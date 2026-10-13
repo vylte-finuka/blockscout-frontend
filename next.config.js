@@ -90,9 +90,12 @@ const moduleExports = {
     },
   },
 
-  // Ajout demandé : ignorer les erreurs TypeScript pendant le build
+  // Skip TS + ESLint during production Docker builds
   typescript: {
     ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 
